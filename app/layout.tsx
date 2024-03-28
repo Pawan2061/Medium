@@ -1,4 +1,6 @@
 import { Navbar } from "@/components/navbar";
+import SessionWrapper from "@/components/SessionWrapper";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -19,8 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-
-        {children}
+        <SessionWrapper>{children}</SessionWrapper>
       </body>
     </html>
   );
