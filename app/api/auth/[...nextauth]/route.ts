@@ -32,7 +32,7 @@ const handler = NextAuth({
         return {
           id: userFromDb.id,
           email: userFromDb.email,
-          username: userFromDb.username,
+          name: userFromDb.username,
         };
       },
     }),

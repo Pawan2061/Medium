@@ -7,6 +7,7 @@ import * as z from "zod";
 
 import { Button } from "./ui/button";
 
+import Link from "next/link";
 import {
   Form,
   FormControl,
@@ -64,9 +65,19 @@ export default function FormPage() {
 
   return (
     <>
+      <div className="flex p-4">
+        <h1 className="text-4xl">
+          Lets get started with us.
+          <Link href="/" className="underline">
+            Join us
+          </Link>
+        </h1>
+      </div>
       {/* @ts-ignore */}
+
       <Form {...form} className="w-2/3 space-y-6">
         {/* @ts-ignore */}
+
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}

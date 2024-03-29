@@ -1,11 +1,10 @@
-"use client";
-import { Signuppage } from "@/components/signuppage";
+import Login from "@/components/login";
 import { getServerSession } from "next-auth";
 
-export default async function Login() {
+export default async function LoginSite() {
   const session = await getServerSession();
   if (!session) {
-    return <Signuppage />;
+    return <Login />;
   }
   return <h1>Welcome {session.user.name}</h1>;
 }
