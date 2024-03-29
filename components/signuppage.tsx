@@ -21,14 +21,14 @@ export function Signuppage() {
           onClick={() => signIn()}
         >
           <ChromeIcon className="h-4 w-4" />
-          Sign up with Google
+          Login with Google
         </Button>
         <Button
           className="flex w-full max-w-sm items-center space-x-2"
           variant="outline"
         >
           <GithubIcon className="h-4 w-4" />
-          Sign in with GitHub
+          Login with GitHub
         </Button>
         <Link href="/register/emailRegister">
           <Button
