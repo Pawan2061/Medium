@@ -21,3 +21,14 @@ model User{
   password String 
 
 }
+
+
+model Blog{
+  id Int @default(autoincrement())
+
+  name String @unique
+  createdAt DateTime @default(now())
+  description String 
+  
+
+}
