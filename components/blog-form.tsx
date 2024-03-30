@@ -35,7 +35,7 @@ export function BlogForm() {
     console.log("data", rawData);
     await CreateBlog(rawData);
 
-    router.push("/");
+    router.push("/ourstory/info");
   }
   return (
     <Card className="w-full max-w-md">

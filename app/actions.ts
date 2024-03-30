@@ -32,3 +32,13 @@ export async function CreateBlog(values: any) {
     return NextResponse.json({ msg: error });
   }
 }
+export async function GETBLOGS() {
+  const blogs = await prisma.blog.findMany();
+
+  if (!blogs) {
+    return NextResponse.json({ message: "The blogs are not registered yet" });
+  }
+  console.log(blogs);
+
+  return blogs;
+}

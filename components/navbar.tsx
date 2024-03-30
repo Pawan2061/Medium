@@ -29,9 +29,9 @@ export async function Navbar() {
         </Link>
         <Link
           className="inline-flex h-9 items-center rounded-md px-2.5 text-sm font-medium underline underline-entire transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-          href="/membership"
+          href="/blogs"
         >
-          Membership
+          Blogs
         </Link>
         <Link
           className="inline-flex h-9 items-center rounded-md px-2.5 text-sm font-medium underline underline-entire transition-colors hover:text-gray-900 dark:hover:text-gray-50"
