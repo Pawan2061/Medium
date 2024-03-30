@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import axios from "axios";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 
@@ -81,7 +82,17 @@ export function Landing() {
               </p>
             </div>
           ) : (
-            <div>Lets get started {session.user.name}</div>
+            <div>
+              <h1>Lets get started {session.user.name}</h1>
+              <div>
+                <h1 className="text-2xl text-black">
+                  Create your own story with us
+                </h1>
+                <Button>
+                  <Link href="/ourstory">Create your own story</Link>
+                </Button>
+              </div>
+            </div>
           )}
         </div>
       </div>

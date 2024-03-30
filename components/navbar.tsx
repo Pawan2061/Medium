@@ -39,23 +39,25 @@ export async function Navbar() {
         >
           Our-story
         </Link>
+
         {!session ? (
-          <Link
-            className="inline-flex h-9 items-center rounded-md px-2.5 text-sm font-medium underline underline-entire transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-            href="/login"
-          >
-            Signin
-          </Link>
+          <>
+            <Link
+              className="inline-flex h-9 items-center rounded-md px-2.5 text-sm font-medium underline underline-entire transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+              href="/login"
+            >
+              Signin
+            </Link>
+            <Link
+              className="inline-flex h-9 items-center rounded-md px-2.5 text-sm font-medium underline underline-entire transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+              href="/register"
+            >
+              Get-Started
+            </Link>
+          </>
         ) : (
           <Logout />
         )}
-
-        <Link
-          className="inline-flex h-9 items-center rounded-md px-2.5 text-sm font-medium underline underline-entire transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-          href="/register"
-        >
-          Get-Started
-        </Link>
       </nav>
     </nav>
   );
