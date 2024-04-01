@@ -5,8 +5,8 @@ import { GETBLOGS } from "../actions";
 
 export default async function Blogs() {
   const blogs = await GETBLOGS();
-  //   @ts-ignore
-  // const mappedBlogs = blogs.slice(0, 5);
+  // @ts-ignore
+  const mappedBlogs = blogs.slice(0, 5);
 
   return (
     <div>
@@ -15,7 +15,7 @@ export default async function Blogs() {
       </h1>
       {/* @ts-ignore */}
 
-      {blogs.map((blog: any) => (
+      {mappedBlogs.map((blog: any) => (
         <BlogCard key={blog.id} blog={blog} />
       ))}
       <Link href="/ourstory " className="flex justify-center">

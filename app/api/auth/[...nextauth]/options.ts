@@ -46,10 +46,6 @@ export const options: NextAuthOptions = {
       if (session && session.user) {
         session.user.id = token.id;
       }
-      console.log("session here");
-
-      console.log(session);
-      console.log("session ended");
 
       return session;
     },

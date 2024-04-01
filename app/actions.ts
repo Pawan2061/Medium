@@ -51,3 +51,25 @@ export async function GETBLOGS() {
 
   return blogs;
 }
+
+export async function findBlogs() {
+  const session = await getServerSession();
+
+  try {
+    const user = await prisma.user.findUnique({
+      where: { email: session.user.email },
+      include: { createdBlogs: true },
+    });
+
+    if (!user) {
+      throw new Error("User not found");
+    }
+
+    return user.createdBlogs;
+  } catch (error) {
+    console.error("Error finding blogs:", error);
+    throw error;
+  } finally {
+    await prisma.$disconnect();
+  }
+}

@@ -27,9 +27,14 @@ export async function Cong() {
           <CardDescription>You did it!</CardDescription>
         </CardHeader>
         <CardFooter className="justify-center">
-          <Link href="/ourstory">
-            <Button> Add more to the tally</Button>
-          </Link>
+          <div className="flex flex-col space-y-2">
+            <Link href="/ourstory">
+              <Button> Add more blogs</Button>
+            </Link>
+            <Link href="/blogs/userBlogs">
+              <Button>See your blogs</Button>
+            </Link>
+          </div>
         </CardFooter>
       </Card>
     </>

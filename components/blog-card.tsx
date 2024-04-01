@@ -34,6 +34,7 @@ export async function BlogCard({ blog }) {
           <p className="text-sm">{blog.name}</p>
         </CardContent>
       </CardContent>
+
       <Button>See more</Button>
     </Card>
   );
