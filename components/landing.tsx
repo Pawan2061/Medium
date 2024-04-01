@@ -28,8 +28,6 @@ export function Landing() {
         username: data.get("username"),
       });
 
-      console.log(response.status);
-
       if (!response) {
         throw new Error("Network response was not ok");
       }

@@ -2,26 +2,32 @@
 
 import prisma from "@/utils/db";
 
+import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
 export async function CreateBlog(values: any) {
-  console.log(prisma);
+  const session = await getServerSession();
+
   console.log("heaha");
 
-  const { name, description } = values;
+  const { name, description }: any = values;
   console.log(name);
 
   try {
     console.log("hello");
 
-    await prisma.blog.create({
+    const newBlog = await prisma.blog.create({
       data: {
         name,
         description,
+        createdBy: {
+          connect: {
+            email: session.user.email,
+          },
+        },
       },
     });
-
-    console.log("hi there");
+    console.log(newBlog);
 
     return {
       message: "blog created",
@@ -29,9 +35,12 @@ export async function CreateBlog(values: any) {
   } catch (error) {
     console.log("some error is therw");
 
-    return NextResponse.json({ msg: error });
+    return {
+      error: error.message,
+    };
   }
 }
+
 export async function GETBLOGS() {
   const blogs = await prisma.blog.findMany();
 

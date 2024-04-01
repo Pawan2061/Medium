@@ -27,7 +27,7 @@ export async function POST(request: Request) {
         password: password,
       },
     });
-    return NextResponse.json({ user: user });
+    return NextResponse.json({ message: "user is created" });
   } catch (error) {
     return NextResponse.json(
       { error: "Failed to parse JSON input" },

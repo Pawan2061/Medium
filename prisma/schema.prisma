@@ -15,11 +15,12 @@ datasource db {
 
 
 model User{
-  id Int @default(autoincrement())
+  id Int @id @default(autoincrement())
   email String @unique 
   username String 
   password String 
 
+  createdBlogs Blog[]
 }
 
 
@@ -30,5 +31,6 @@ model Blog{
   createdAt DateTime @default(now())
   description String 
   
-
+  createdBy User @relation(fields: [createdById], references: [id])
+  createdById Int
 }

@@ -14,6 +14,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useSession } from "next-auth/react";
+
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,6 +24,7 @@ import { FormEvent } from "react";
 
 export function BlogForm() {
   const router = useRouter();
+  const { data: session, status } = useSession();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     console.log("reached here");
@@ -32,7 +35,9 @@ export function BlogForm() {
       name: formData.get("name"),
       description: formData.get("description"),
     };
-    console.log("data", rawData);
+
+    // @ts-ignore
+
     await CreateBlog(rawData);
 
     router.push("/ourstory/info");

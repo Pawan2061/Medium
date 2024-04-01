@@ -28,14 +28,12 @@ export default function Login() {
     const formData = new FormData(event.currentTarget);
 
     console.log("checkpost handlesubmit");
-    console.log(formData.get("email"));
     const res = await signIn("credentials", {
       email: formData.get("email"),
       password: formData.get("password"),
 
       redirect: false,
     });
-    console.log(res?.status);
 
     if (!res || res.error) {
       console.log("unsuccessful");

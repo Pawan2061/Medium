@@ -39,7 +39,6 @@ export default function FormPage() {
     },
   });
   async function onSubmit(data: FormData) {
-    console.log("submitting data", data);
     // @ts-ignore
 
     const { email, username, password } = data;
@@ -56,7 +55,6 @@ export default function FormPage() {
       if (!response) {
         throw new Error("Network response was not ok");
       }
-      console.log("registrations successfull", response);
       router.push("/");
     } catch (error) {
       console.error("Registration Failed:", error);
