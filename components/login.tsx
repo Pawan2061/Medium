@@ -80,7 +80,7 @@ export default function Login() {
           <SignwithGoole />
 
           <div className="mt-4 text-center text-sm">
-            Don't have an account yet?
+            Dont have an account yet?
             <Link className="underline" href="#">
               Sign Up
             </Link>
